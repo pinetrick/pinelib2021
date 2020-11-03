@@ -47,4 +47,34 @@ dependencies {
 
     //当一个dex文件装不下的时候自动拆分 -- 编译
     implementation 'androidx.multidex:multidex:2.0.0'
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //RxJava 异步转同步
+    implementation 'io.reactivex.rxjava2:rxjava:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
+    //网络请求框架 Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.2'
+
+
+
+
+
+
+
+
 }

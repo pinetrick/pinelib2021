@@ -5,8 +5,27 @@ import android.content.Context
 import androidx.multidex.MultiDexApplication
 import com.blueberrysolution.pinelib21.debug.d
 import com.blueberrysolution.pinelib21.debug.e
+import com.blueberrysolution.pinelib21.net.retrofit.RetrofitManager
 import java.util.*
 
+/*
+* 网络初始化办法
+* OnCreate中
+* myRs = N(baseUrl, RetrofitServices::class).n()
+*
+公共方法
+
+var myRs: RetrofitServices? = null;
+fun n(): RetrofitServices{
+    if (myRs != null) {
+        return myRs!!;
+    }
+    e("No Net Service Inited, 闪退")
+    return myRs!!;
+}
+
+*
+* */
 
 fun app(): PineApplication{
     return PineApplication.i();
@@ -17,7 +36,6 @@ fun c(): Context{
 }
 
 open class PineApplication: MultiDexApplication {
-
 
 
 
