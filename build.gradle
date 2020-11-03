@@ -41,4 +41,10 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+
+
+
+    //当一个dex文件装不下的时候自动拆分 -- 编译
+    implementation 'androidx.multidex:multidex:2.0.0'
 }
