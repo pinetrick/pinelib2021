@@ -17,6 +17,24 @@ android {
         consumerProguardFiles "consumer-rules.pro"
     }
 
+    def listSubFile = {
+        def resFolder = 'src/main/res'
+        def files = file(resFolder).listFiles()
+        def folders = []
+        files.each {
+            item -> folders.add(item.absolutePath)
+        }
+        folders.add(file(resFolder).parentFile.absolutePath)
+        return folders
+    }
+    sourceSets {
+        main {
+            res.srcDirs = listSubFile()
+        }
+    }
+
+
+
     buildTypes {
         release {
             minifyEnabled false

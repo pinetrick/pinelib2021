@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="unit_m">M</string>
+    <string name="unit_km">KM</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="cancel">Concel</string>
+    <string name="confirm">Confirm</string>
+
+    <string name="message_box_title">Notice</string>
+</resources>

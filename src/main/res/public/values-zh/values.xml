@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="unit_m">米</string>
+    <string name="unit_km">公里</string>
+
+    <string name="yes">是</string>
+    <string name="no">否</string>
+
+    <string name="cancel">取消</string>
+    <string name="confirm">确定</string>
+
+    <string name="message_box_title">提示</string>
+</resources>
