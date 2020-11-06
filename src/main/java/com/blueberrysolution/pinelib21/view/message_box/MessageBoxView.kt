@@ -6,13 +6,13 @@ import android.content.DialogInterface
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
-import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.TextView
 import com.blueberrysolution.pinelib21.R
-import com.blueberrysolution.pinelib21.addone.mytimer.MyTimer
 import com.blueberrysolution.pinelib21.app.app
 import com.blueberrysolution.pinelib21.app.c
+import com.blueberrysolution.pinelib21.basic_class_ext.input_method.imeHideImmediately
+import com.blueberrysolution.pinelib21.basic_class_ext.input_method.imeShow
 import com.blueberrysolution.pinelib21.context.a
 import com.blueberrysolution.pinelib21.view.toast.t
 
@@ -70,7 +70,17 @@ class MessageBoxView: AlertDialog {
     }
 
     private fun setInputMethod() {
-        getWindow()!!.clearFlags(WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
+        if(messageBoxObj.allowInput) {
+             messageBoxObj.dialog!!.imeShow()
+
+            //弹出输入法
+            if (editTextX != null) {
+                //editTextX!!.imeShow()
+                //选中全部内容
+                editTextX!!.selectAll()
+            }
+        }
+
     }
 
     fun setInput(allowInput: Boolean, inputDefValue:String, hint: String) {
@@ -131,17 +141,21 @@ class MessageBoxView: AlertDialog {
         }
 
         layoutx.setOnClickListener{
-            dismiss()
+
             if (messageBoxObj.callback != null){
 
                 var string = "";
                 if (editTextX != null){
                     string = editTextX!!.text.toString();
+                    messageBoxObj.dialog!!.window!!.addFlags(WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
+                    messageBoxObj.dialog!!.imeHideImmediately()
+                    //layoutx!!.imeHideImmediately()
+
                 };
 
                 messageBoxObj.callback!!(id, string)
             }
-
+            dismiss()
         }
     }
 
@@ -184,6 +198,7 @@ class MessageBoxView: AlertDialog {
         if (MessageBoxManager.messageboxQueue.count() != 0){
             MessageBoxManager.messageboxQueue[0].show()
         }
+
 
         super.dismiss()
     }

@@ -2,6 +2,7 @@ package com.blueberrysolution.pinelib21.net.retrofit
 
 import kotlin.reflect.KClass
 
+// myRs = N(baseUrl, RetrofitServices::class).n()
 class N<T : Any>(baseUrl: String, kClass: KClass<T>) {
     var retrofitManager:  RetrofitManager<T>? = null;
 

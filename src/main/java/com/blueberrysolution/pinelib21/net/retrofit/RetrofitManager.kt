@@ -2,11 +2,13 @@ package com.blueberrysolution.pinelib21.net.retrofit
 
 
 import com.google.gson.GsonBuilder
-import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import retrofit2.Retrofit
+import okhttp3.Cookie
+import okhttp3.CookieJar
+import okhttp3.HttpUrl
 import okhttp3.OkHttpClient
-import java.lang.Exception
+import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import kotlin.reflect.KClass
 
@@ -24,6 +26,7 @@ final class RetrofitManager<T : Any> {
     var request0: T? = null
     var retrofit: Retrofit? = null
 
+    private val cookieStore: HashMap<String, List<Cookie>> = HashMap()
 
     constructor(hostUrl: String, classInfo: KClass<T>) {
         this.hostUrl = hostUrl;
@@ -32,10 +35,28 @@ final class RetrofitManager<T : Any> {
         try {
             // 初始化okhttp
             if (retrofit == null){
+
+
                 val client = OkHttpClient.Builder()
                     .connectTimeout(500, TimeUnit.SECONDS)
                     .readTimeout(500, TimeUnit.SECONDS)
                     .writeTimeout(500, TimeUnit.SECONDS)
+                    .cookieJar(object : CookieJar {
+
+
+                        override fun saveFromResponse(
+                            url: HttpUrl,
+                            cookies: List<Cookie>
+                        ) {
+                            cookieStore[url.host] = cookies
+                        }
+
+                        override fun loadForRequest(url: HttpUrl): List<Cookie> {
+                            val cookies =
+                                cookieStore.get(url.host)
+                            return cookies ?: ArrayList()
+                        }
+                    })
                     .build()
 
                 // 初始化Retrofit
