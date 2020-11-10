@@ -41,7 +41,7 @@ fun View.imeHideImmediately(){
         else{
             //window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
             inputMethodManager!!.hideSoftInputFromWindow(this.windowToken, InputMethodManager.HIDE_NOT_ALWAYS);
-            e("无法获取输入法焦点，故无法关闭软键盘")
+            //d("无法获取输入法焦点，故无法关闭软键盘")
         }
     }
 

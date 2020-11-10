@@ -73,11 +73,13 @@ dependencies {
     implementation "androidx.drawerlayout:drawerlayout:1.1.0-alpha03"
 
 
+    // Anko Commons 异步线程
+    implementation 'org.jetbrains.anko:anko-commons:0.10.1'
 
 
 
-
-
+    //facebook 的网络图片加载库
+    implementation 'com.facebook.fresco:fresco:2.3.0'
 
     //RxJava 异步转同步
     implementation 'io.reactivex.rxjava2:rxjava:2.0.1'
@@ -90,7 +92,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:4.2.2'
 
 
-
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
 
 
 }

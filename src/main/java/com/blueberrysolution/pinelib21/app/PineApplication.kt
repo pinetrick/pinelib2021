@@ -6,6 +6,7 @@ import androidx.multidex.MultiDexApplication
 import com.blueberrysolution.pinelib21.debug.d
 import com.blueberrysolution.pinelib21.debug.e
 import com.blueberrysolution.pinelib21.net.retrofit.RetrofitManager
+import com.facebook.drawee.backends.pipeline.Fresco
 import java.util.*
 
 /*
@@ -47,6 +48,10 @@ open class PineApplication: MultiDexApplication {
 
     override fun onCreate() {
         super.onCreate()
+
+        //初始化网络图片加载组件
+        Fresco.initialize(this);
+
 
         if (C.isDebug){
             onDebugInit();

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_update_title">您必须更新应用后才能使用</string>
+    <string name="app_update_btn">现在更新</string>
+
+    <string name="app_update_detail">一些新功能</string>
+</resources>

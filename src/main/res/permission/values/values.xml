@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permission_require_title">App will need the following Permission to continue</string>
+    <string name="permission_require_go_grant">Grant Now</string>
+
+    <string name="photo_choose_no_permission">Cannot get the permission, Please Retry</string>
+
+    <string name="permission_require_camara">Take Photo</string>
+    <string name="permission_require_READ_CONTACTS">Read Contacts</string>
+    <string name="permission_require_WRITE_CONTACTS">Write Contacts</string>
+    <string name="permission_require_READ_EXTERNAL_STORAGE">Read SD card Files</string>
+    <string name="permission_require_WRITE_EXTERNAL_STORAGE">Cache file to SD card</string>
+    <string name="permission_require_MICROPHONE">Record</string>
+    <string name="permission_require_READ_PHONE_STATE">Read Phone State</string>
+    <string name="permission_require_ACCESS_COARSE_LOCATION">Access Coarse Location</string>
+    <string name="permission_require_ACCESS_FINE_LOCATION">Access Fine Location</string>
+
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permission_require_title">程序需要以下权限才能继续</string>
+    <string name="permission_require_go_grant">去授权</string>
+
+    <string name="photo_choose_no_permission">无法获取到权限，请重试！</string>
+
+
+
+    <string name="permission_require_camara">控制相机拍照</string>
+    <string name="permission_require_READ_CONTACTS">读取联系人信息</string>
+    <string name="permission_require_WRITE_CONTACTS">写联系人信息</string>
+    <string name="permission_require_READ_EXTERNAL_STORAGE">读取存储卡中数据</string>
+    <string name="permission_require_WRITE_EXTERNAL_STORAGE">在存储卡中缓存数据</string>
+    <string name="permission_require_MICROPHONE">录音</string>
+    <string name="permission_require_READ_PHONE_STATE">读取电话识别信息</string>
+    <string name="permission_require_ACCESS_COARSE_LOCATION">获取您的大致位置</string>
+    <string name="permission_require_ACCESS_FINE_LOCATION">获取您的详细位置</string>
+</resources>

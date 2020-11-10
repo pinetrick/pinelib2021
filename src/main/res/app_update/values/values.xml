@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_update_title">Please update App before use</string>
+    <string name="app_update_btn">Update Now</string>
+
+    <string name="app_update_detail">Add new Features!</string>
+</resources>
