@@ -11,6 +11,12 @@ fun String.isDouble(): Boolean{
     return isNum.matches()
 }
 
+fun String.isNZMobile(): Boolean{
+    val pattern: Pattern = Pattern.compile("^0[0-9]{7,}$")
+    val isNum: Matcher = pattern.matcher(this)
+    return isNum.matches()
+}
+
 fun String.toDate(format: String = "yyyy-MM-dd HH:mm:ss"): Date{
     if (this.length == format.length){
         var formatter =  SimpleDateFormat(format);

@@ -9,6 +9,9 @@
     <string name="cancel">Concel</string>
     <string name="confirm">Confirm</string>
     <string name="retry">Retry</string>
+    <string name="delete">Delete</string>
+    <string name="modify">Modify</string>
+    <string name="save">Save</string>
 
     <string name="message_box_title">Notice</string>
     <string name="waitting_box_title">Loading...</string>

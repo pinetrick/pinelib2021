@@ -49,6 +49,8 @@ open class PineApplication: MultiDexApplication {
     override fun onCreate() {
         super.onCreate()
 
+        ZSignalCheck();
+
         //初始化网络图片加载组件
         Fresco.initialize(this);
 

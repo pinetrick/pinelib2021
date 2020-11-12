@@ -13,7 +13,8 @@
 
 
 
-    <application>
+    <application
+        android:usesCleartextTraffic="true">
 
 
         <provider

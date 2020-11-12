@@ -9,6 +9,9 @@
     <string name="cancel">取消</string>
     <string name="confirm">确定</string>
     <string name="retry">重试</string>
+    <string name="delete">删除</string>
+    <string name="modify">修改</string>
+    <string name="save">保存</string>
 
     <string name="message_box_title">提示</string>
     <string name="waitting_box_title">加载中...</string>
