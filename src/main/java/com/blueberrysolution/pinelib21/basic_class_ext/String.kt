@@ -6,6 +6,7 @@ import java.util.regex.Matcher
 import java.util.regex.Pattern
 
 fun String.isDouble(): Boolean{
+    if (this.equals("")) return false;
     val pattern: Pattern = Pattern.compile("^-?\\d*\\.?\\d*\$")
     val isNum: Matcher = pattern.matcher(this)
     return isNum.matches()

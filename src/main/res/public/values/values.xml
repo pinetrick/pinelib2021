@@ -6,7 +6,7 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
 
-    <string name="cancel">Concel</string>
+    <string name="cancel">Cancel</string>
     <string name="confirm">Confirm</string>
     <string name="retry">Retry</string>
     <string name="delete">Delete</string>
@@ -15,6 +15,7 @@
 
     <string name="message_box_title">Notice</string>
     <string name="waitting_box_title">Loading...</string>
+    <string name="invalid_value">Invalid Value</string>
 
     <string name="one_more_time_to_exit">Press one more time to exit</string>
 </resources>

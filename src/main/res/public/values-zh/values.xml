@@ -15,5 +15,8 @@
 
     <string name="message_box_title">提示</string>
     <string name="waitting_box_title">加载中...</string>
+    <string name="invalid_value">数据无效！</string>
+
+
     <string name="one_more_time_to_exit">再按一次退出</string>
 </resources>

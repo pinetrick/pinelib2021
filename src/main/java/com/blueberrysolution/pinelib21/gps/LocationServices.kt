@@ -17,6 +17,26 @@ import android.location.LocationListener as LocationListener
 
 class LocationServices: LocationListener {
     var callback: ((Location?) -> Unit)? = null;
+
+
+    @SuppressLint("MissingPermission")
+    fun getLastLocation(): Location?{
+        //获取到记录当前位置
+        var locationManager = c().getSystemService(Context.LOCATION_SERVICE) as LocationManager
+
+        var list = locationManager.getProviders(true);
+
+        val criteria = Criteria()
+        criteria.accuracy = Criteria.ACCURACY_FINE //最高精度的
+
+
+        val provider: String? = locationManager.getBestProvider(criteria, true)
+
+        val location: Location = locationManager.getLastKnownLocation(provider)
+        return location;
+    }
+
+
     @SuppressLint("MissingPermission")
     fun startRefresh(callback: ((location: Location?) -> Unit)?){
         if (callback != null){

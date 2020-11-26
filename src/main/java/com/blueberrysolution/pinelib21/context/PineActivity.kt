@@ -1,7 +1,11 @@
 package com.blueberrysolution.pinelib21.context
 
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.view.KeyEvent
+import android.view.View
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.blueberrysolution.pinelib21.R
 import com.blueberrysolution.pinelib21.addone.mytimer.MyTimer
@@ -68,6 +72,30 @@ open class PineActivity : AppCompatActivity() {
         return super.onKeyDown(keyCode, event)
     }
 
+    fun 状态栏透明(blackWords: Boolean = true) {
+        //透明状态栏
+        if (Build.VERSION.SDK_INT >= 21) { //21表示5.0
+            val window = window
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+            window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    or View.SYSTEM_UI_FLAG_LAYOUT_STABLE)
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            window.statusBarColor = Color.TRANSPARENT
+        } else if (Build.VERSION.SDK_INT >= 19) { //19表示4.4
+            window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+            //虚拟键盘也透明
+            //getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        }
+
+        val decor = activity!!.window.decorView
+        if (blackWords) {
+            decor.systemUiVisibility =
+                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+        } else {
+            decor.systemUiVisibility =
+                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+        }
+    }
 
     companion object {
         var activity: PineActivity? = null;

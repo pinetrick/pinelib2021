@@ -63,11 +63,13 @@ fun Dialog.imeHideImmediately(){
         }
         else{
 
-            inputMethodManager!!.hideSoftInputFromWindow(
-                this.currentFocus!!.windowToken,
-                InputMethodManager.HIDE_NOT_ALWAYS
-            )
-            e("无法获取输入法焦点，故无法关闭软键盘")
+            if ( this.currentFocus != null) {
+                inputMethodManager!!.hideSoftInputFromWindow(
+                    this.currentFocus!!.windowToken,
+                    InputMethodManager.HIDE_NOT_ALWAYS
+                )
+            }
+            //e("无法获取输入法焦点，故无法关闭软键盘")
         }
     }
 

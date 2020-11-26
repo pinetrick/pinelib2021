@@ -4,7 +4,6 @@ package com.blueberrysolution.pinelib21.view.recycle_view
 import androidx.recyclerview.widget.*
 import com.blueberrysolution.pinelib21.app.app
 
-import java.util.*
 
 /**
  *         使用方法
@@ -27,6 +26,11 @@ class RecyViewSetup {
     constructor(recycleView: RecyclerView, adapter: RecyclerView.Adapter<*>){
         this.recycleView = recycleView;
         this.adapter = adapter;
+    }
+
+    fun setColumn(column: Int): RecyViewSetup{
+        layoutManager = GridLayoutManager(app(), column)
+        return this;
     }
 
 
