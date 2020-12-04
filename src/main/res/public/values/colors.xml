@@ -147,4 +147,18 @@
     <color name="crimson">#dc143c</color><!--暗深红色 -->
     <color name="plum">#dda0dd</color><!--洋李色 -->
     <color name="gainsboro">#dcdcdc</color><!--淡灰色 -->
+    <color name="aaa">#aaaaaa</color>
+    <color name="bbb">#bbbbbb</color>
+    <color name="ccc">#cccccc</color>
+    <color name="ddd">#dddddd</color>
+    <color name="eee">#eeeeee</color>
+    <color name="c999">#999999</color>
+    <color name="c888">#888888</color>
+    <color name="c777">#777777</color>
+    <color name="c666">#666666</color>
+    <color name="c555">#555555</color>
+    <color name="c444">#444444</color>
+    <color name="c333">#333333</color>
+    <color name="c222">#222222</color>
+    <color name="c111">#111111</color>
 </resources>
