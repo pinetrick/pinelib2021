@@ -14,7 +14,7 @@ fun String.isDouble(): Boolean{
 
 fun String.isInt(): Boolean{
     if (this.equals("")) return false;
-    val pattern: Pattern = Pattern.compile("^-?\\d*\\.\$")
+    val pattern: Pattern = Pattern.compile("[0-9]*")
     val isNum: Matcher = pattern.matcher(this)
     return isNum.matches()
 }

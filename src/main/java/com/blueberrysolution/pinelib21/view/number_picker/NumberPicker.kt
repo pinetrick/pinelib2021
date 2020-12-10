@@ -16,6 +16,7 @@ import androidx.core.widget.addTextChangedListener
 import com.blueberrysolution.pinelib21.R
 import com.blueberrysolution.pinelib21.basic_class_ext.helper_functions.color
 import com.blueberrysolution.pinelib21.basic_class_ext.helper_functions.drawable
+import com.blueberrysolution.pinelib21.basic_class_ext.input_method.imeHideImmediately
 import com.blueberrysolution.pinelib21.basic_class_ext.isInt
 
 
@@ -28,6 +29,11 @@ class NumberPicker : RelativeLayout, TextWatcher {
     lateinit var incBtn: TextView;
     lateinit var inputText: EditText;
 
+    var m_onNumberChangeListener: ((value: Int) -> Unit)? = null;
+
+    fun setOnNumberChangeListener(v: (value: Int) -> Unit){
+        m_onNumberChangeListener = v;
+    }
 
     fun initView(){
         decBtn = mView.findViewById(R.id.decBtn)
@@ -38,6 +44,7 @@ class NumberPicker : RelativeLayout, TextWatcher {
         incBtn.setOnClickListener(::onInc)
         inputText.addTextChangedListener(this)
 
+
         refreshView()
     }
 
@@ -45,6 +52,9 @@ class NumberPicker : RelativeLayout, TextWatcher {
         var text = inputText.text.toString()
         if (text.isInt()){
             number = text.toInt()
+
+            if (m_onNumberChangeListener != null)
+                m_onNumberChangeListener!!(number)
         }
 
     }
@@ -53,6 +63,8 @@ class NumberPicker : RelativeLayout, TextWatcher {
         if (number != min) {
             number--;
             refreshView()
+            if (m_onNumberChangeListener != null)
+                m_onNumberChangeListener!!(number)
         }
     }
 
@@ -60,6 +72,8 @@ class NumberPicker : RelativeLayout, TextWatcher {
         if (number != max) {
             number++;
             refreshView()
+            if (m_onNumberChangeListener != null)
+                m_onNumberChangeListener!!(number)
         }
     }
 

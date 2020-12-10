@@ -2,6 +2,9 @@ package com.blueberrysolution.pinelib21.view.waitting_box
 
 import com.blueberrysolution.pinelib21.R
 import com.blueberrysolution.pinelib21.context.a
+import com.blueberrysolution.pinelib21.debug.d
+import com.blueberrysolution.pinelib21.debug.e
+import java.lang.Exception
 
 
 class WaittingBox {
@@ -20,7 +23,13 @@ class WaittingBox {
             waittingBoxObj,
             this
         );
-        waittingBoxObj.dialog!!.show()
+        try{
+            waittingBoxObj.dialog!!.show()
+        }
+        catch (ee: Exception){
+            e("上下文失效，无法显示等待框")
+        }
+
 
         return this;
     }
