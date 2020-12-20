@@ -47,7 +47,7 @@ class RecyViewSetup : SwipeRefreshLayout.OnRefreshListener {
         layoutManager = GridLayoutManager(app(), column)
         return this;
     }
-
+    //自动换行
     fun setIsFlexBox(isFlexBox: Boolean): RecyViewSetup {
         if (isFlexBox) {
             fLayoutManager = FlexboxLayoutManager(app())

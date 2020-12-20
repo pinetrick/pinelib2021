@@ -164,7 +164,8 @@ class MessageBoxView: AlertDialog {
             .getIdentifier(key, "id", app().getPackageName()) //获取标识符
         if (string2Id != 0) {
             var btn = findViewById<View>(string2Id)
-            btn.visibility = View.GONE
+            if (btn != null)
+                btn.visibility = View.GONE
         }
     }
 
@@ -186,7 +187,8 @@ class MessageBoxView: AlertDialog {
 
     fun setupTitle(title: String){
         var mainMassage = this.findViewById<TextView>(R.id.mainMassage)
-        mainMassage.text = title;
+        if (mainMassage != null)
+            mainMassage.text = title;
     }
 
     override fun dismiss() {

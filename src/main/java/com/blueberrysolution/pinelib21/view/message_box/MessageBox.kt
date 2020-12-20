@@ -5,7 +5,7 @@ import com.blueberrysolution.pinelib21.app.c
 import com.blueberrysolution.pinelib21.basic_class_ext.helper_functions.s
 import com.blueberrysolution.pinelib21.context.a
 
-class MessageBox {
+open class MessageBox {
     var messageBoxObj: MessageBoxObj = MessageBoxObj();
 
     constructor(){

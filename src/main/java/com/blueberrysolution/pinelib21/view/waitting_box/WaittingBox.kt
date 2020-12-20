@@ -59,7 +59,9 @@ class WaittingBox {
 
     fun hide() {
         if (waittingBoxObj.dialog != null) {
-            waittingBoxObj.dialog!!.dismiss()
+            if (waittingBoxObj.dialog!!.isShowing) {
+                waittingBoxObj.dialog!!.dismiss()
+            }
         }
     }
 
