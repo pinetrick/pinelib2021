@@ -4,6 +4,7 @@ import com.blueberrysolution.pinelib21.R
 import com.blueberrysolution.pinelib21.app.c
 import com.blueberrysolution.pinelib21.basic_class_ext.helper_functions.s
 import com.blueberrysolution.pinelib21.context.a
+import java.lang.System.out
 
 open class MessageBox {
     var messageBoxObj: MessageBoxObj = MessageBoxObj();
@@ -42,13 +43,15 @@ open class MessageBox {
         return this;
     }
 
-//    fun show(id: Int, vararg btns: Int): MessageBox{
-//        var btns_m: Array<out String> = arrayOf<String>()
-//        btns.forEach {
-//            btns_m.plus(s(it))
-//        }
-//        return show(s(id), btns_m);
-//    }
+    fun show(id: Int, vararg btns: Int): MessageBox{
+        var btns_m: Array<String> = arrayOf<String>()
+        btns.forEach {
+            btns_m = btns_m.plus(s(it))
+        }
+        messageBoxObj.title = s(id);
+        messageBoxObj.btns = btns_m;
+        return show();
+    }
 
     fun setInputAllow(allow: Boolean, defValue: String = "", hint: String = ""): MessageBox{
         messageBoxObj.allowInput = allow;
@@ -56,6 +59,8 @@ open class MessageBox {
         messageBoxObj.inputDefValue = defValue;
         return this;
     }
+
+
 
     fun show(title: String, vararg btns: String): MessageBox{
         messageBoxObj.title = title;
@@ -72,3 +77,5 @@ open class MessageBox {
 
 
 }
+
+

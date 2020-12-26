@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import com.blueberrysolution.pinelib21.R
 import com.blueberrysolution.pinelib21.app.app
@@ -66,7 +67,16 @@ class MessageBoxView: AlertDialog {
         setButton(messageBoxObj.btns)
         setInput(messageBoxObj.allowInput, messageBoxObj.inputDefValue, messageBoxObj.hint)
         setInputMethod()
+        setCloseBtn()
+    }
 
+    private fun setCloseBtn() {
+        val string2Id: Int = a().getResources()
+            .getIdentifier("close_btn", "id", app().getPackageName()) //获取标识符
+        var closeBtn = findViewById<ImageView>(string2Id)
+        closeBtn?.setOnClickListener {
+            messageBoxObj.dialog?.dismiss()
+        }
     }
 
     private fun setInputMethod() {

@@ -18,5 +18,9 @@
     <string name="invalid_value">数据无效！</string>
 
 
+    <string name="picture_choose_title">请选择...</string>
+    <string name="picture_choose_from_camera">拍照</string>
+    <string name="picture_choose_from_album">图库</string>
+
     <string name="one_more_time_to_exit">再按一次退出</string>
 </resources>

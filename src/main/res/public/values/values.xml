@@ -17,5 +17,9 @@
     <string name="waitting_box_title">Loading...</string>
     <string name="invalid_value">Invalid Value</string>
 
+    <string name="picture_choose_title">Please Choose...</string>
+    <string name="picture_choose_from_camera">Camera</string>
+    <string name="picture_choose_from_album">Album</string>
+
     <string name="one_more_time_to_exit">Press one more time to exit</string>
 </resources>

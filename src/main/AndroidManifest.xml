@@ -33,6 +33,11 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:launchMode="singleTask" />
         <activity
+            android:name=".view.choose_picture.PictureChooseActivity"
+            android:theme="@style/Theme.AppCompat.Transpartent"
+            android:launchMode="singleTask" />
+
+        <activity
             android:name=".view.app_update.AppUpdateActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:launchMode="singleTask" />
